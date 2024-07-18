@@ -67,8 +67,6 @@ def get_preprocessed_data(data):
         ]
     )
 
-    data = get_data()
-
     X = data.drop(columns=["Target"])
     print(f"Shape of X before OneHot Encoding and Standardizing: {X.shape}")
     X = preprocessor.fit_transform(X)
