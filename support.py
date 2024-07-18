@@ -14,14 +14,15 @@ def get_scaled_data(data_df):
     
     return X_train, X_test, y_train, y_test
 
-def get_data():
+def get_data(integer_target=True):
     import pandas as pd
 
     data = pd.read_csv("data.csv", delimiter=";")
     # remove whitespace from column names
     data.columns = data.columns.str.strip()
     # convert 'Target' from 'Dropout', 'Enrolled', 'Graduated' to 0, 1, 2
-    data["Target"] = data["Target"].map({"Dropout": 0, "Enrolled": 1, "Graduate": 2})
+    if integer_target:
+        data["Target"] = data["Target"].map({"Dropout": 0, "Enrolled": 1, "Graduate": 2})
 
     return data
 
