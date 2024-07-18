@@ -78,4 +78,4 @@ def get_preprocessed_data(data):
         X, y, test_size=0.2, random_state=1
     )
 
-    return X_train, X_test, y_train, y_test
+    return X_train, X_test, y_train, y_test, preprocessor
